@@ -1,0 +1,11 @@
+/* styles/Layout.module.css */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .main {
+    margin-top: 20px;
+  }
+  
