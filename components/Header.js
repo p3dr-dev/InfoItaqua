@@ -29,8 +29,8 @@ const Header = () => {
 
 const NavItem = ({ href, label }) => (
   <li className={styles.navItem}>
-    <Link href={href}>
-      <a className={styles.navLink}>{label}</a>
+    <Link href={href} className={styles.navLink}>
+      {label}
     </Link>
   </li>
 );
