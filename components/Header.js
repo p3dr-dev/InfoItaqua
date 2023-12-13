@@ -1,13 +1,14 @@
 // components/Header.js
 import Link from 'next/link';
+import { FaHome, FaDesktop, FaFileAlt, FaTable, FaEnvelope } from 'react-icons/fa';
 import styles from '../styles/Header.module.css';
 
 const navItems = [
-  { href: '/', label: 'PÁGINA INICIAL' },
-  { href: '/informatica-basica', label: 'INFORMÁTICA BÁSICA' },
-  { href: '/editor-de-texto', label: 'EDITOR DE TEXTO' },
-  { href: '/editor-de-planilha', label: 'EDITOR DE PLANILHA' },
-  { href: '/contato', label: 'CONTATO' },
+  { href: '/', label: 'PÁGINA INICIAL', icon: <FaHome /> },
+  { href: '/informatica-basica', label: 'INFORMÁTICA BÁSICA', icon: <FaDesktop /> },
+  { href: '/editor-de-texto', label: 'EDITOR DE TEXTO', icon: <FaFileAlt /> },
+  { href: '/editor-de-planilha', label: 'EDITOR DE PLANILHA', icon: <FaTable /> },
+  { href: '/contato', label: 'CONTATO', icon: <FaEnvelope /> },
 ];
 
 const Header = () => {
@@ -27,10 +28,10 @@ const Header = () => {
   );
 };
 
-const NavItem = ({ href, label }) => (
+const NavItem = ({ href, label, icon }) => (
   <li className={styles.navItem}>
     <Link href={href} className={styles.navLink}>
-      {label}
+        {icon} {label}
     </Link>
   </li>
 );
