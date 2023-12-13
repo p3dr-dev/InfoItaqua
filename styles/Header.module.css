@@ -1,10 +1,11 @@
 /* styles/Header.module.css */
 .header {
-  background-color: #fff;
+  background-color: #3498db;
   transition: background-color 0.3s, box-shadow 0.3s;
   position: fixed;
   width: 100%;
   z-index: 1000;
+  overflow: hidden; /* Evita que o background azul ultrapasse os limites da tela */
 }
 
 .header.scrolled {
@@ -15,28 +16,29 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  padding: 20px;
 }
 
 .title {
-  font-size: 1.8em;
+  font-size: 2.5em;
   margin: 0;
-  color: #333;
+  color: #fff;
 }
 
 .menuIcon {
   display: none;
   cursor: pointer;
-  font-size: 1.5em;
+  font-size: 1.8em;
   transition: color 0.3s;
+  color: #fff;
 }
 
 .menuIcon:hover {
-  color: #555;
+  color: #ddd;
 }
 
 .menuIcon.open {
-  color: #fff;
+  color: #ddd;
 }
 
 .nav {
@@ -53,18 +55,36 @@
 
 .navItem {
   display: inline;
-  margin-right: 10px;
+  margin-right: 15px;
 }
 
 .navLink {
-  color: #333;
+  position: relative;
+  color: #fff;
   text-decoration: none;
-  padding: 10px;
+  padding: 15px;
   transition: background-color 0.3s;
+  font-weight: bold;
+  border-radius: 5px;
 }
 
 .navLink:hover {
-  background-color: #f0f0f0;
+  background-color: #2980b9;
+}
+
+/* Removendo o texto dos links ao passar o mouse */
+.navLink:hover span {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.navLink span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .show {
@@ -81,10 +101,10 @@
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: 60px;
+    top: 70px;
     left: 0;
     width: 100%;
-    background-color: #fff;
+    background-color: #3498db;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
     transform: scaleY(0);
     transform-origin: top;
@@ -117,10 +137,11 @@
   }
 
   .navLink:hover {
-    background-color: #f0f0f0;
+    background-color: #2980b9;
+    border-radius: 5px;
   }
 
   .menuIcon.open {
-    color: #333;
+    color: #fff;
   }
 }

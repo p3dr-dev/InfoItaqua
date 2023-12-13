@@ -5,7 +5,9 @@ import styles from '../styles/Footer.module.css';
 const Footer = () => (
   <footer className={styles.footer}>
     <div className={styles.container}>
-      <div className={styles.links}>{/* Adicione seus links aqui */}</div>
+      <div className={styles.links}>
+        {/* Adicione seus links aqui */}
+      </div>
       <p>© 2023 InfoItaqua. Todos os direitos reservados.</p>
     </div>
   </footer>

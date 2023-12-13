@@ -4,27 +4,32 @@
   color: #fff;
   padding: 20px 0;
   text-align: center;
-  opacity: 0;
-  animation: fadeIn 0.5s ease-in-out forwards 0.5s;
 }
 
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.links {
+  display: flex;
   align-items: center;
 }
 
 .links a {
   color: #fff;
-  margin: 0 10px;
+  margin: 0 15px;
   text-decoration: none;
   transition: color 0.3s;
+  font-weight: bold;
 }
 
 .links a:hover {
   color: #ddd;
+  text-decoration: underline;
 }
 
 /* Animação de Fade-In */
