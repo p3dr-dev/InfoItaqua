@@ -1,114 +1,126 @@
 /* styles/Header.module.css */
 .header {
-    position: relative;
-    text-align: center;
-    padding: 20px;
-    background: url('../Info\ itaqua.jpeg') center/cover;
-    color: white;
-  }
-  
-  .overlay {
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 20px;
-  }
-  
-  .title {
-    text-transform: uppercase;
-    margin-bottom: 20px;
-  }
-  
-  .nav {
-    display: flex;
-    align-items: center;
-  }
-  
-  .navList {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    margin-left: auto;
-  }
-  
-  .navItem {
-    margin-right: 20px;
-  }
-  
-  .navLink {
-    text-decoration: none;
-    color: white;
-    display: flex;
-    align-items: center;
-  }
-  
+  background-color: #fff;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+
+.header.scrolled {
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.overlay {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.title {
+  font-size: 1.8em;
+  margin: 0;
+  color: #333;
+}
+
+.menuIcon {
+  display: none;
+  cursor: pointer;
+  font-size: 1.5em;
+  transition: color 0.3s;
+}
+
+.menuIcon:hover {
+  color: #555;
+}
+
+.menuIcon.open {
+  color: #fff;
+}
+
+.nav {
+  flex-grow: 1;
+  text-align: right;
+}
+
+.navList {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navItem {
+  display: inline;
+  margin-right: 10px;
+}
+
+.navLink {
+  color: #333;
+  text-decoration: none;
+  padding: 10px;
+  transition: background-color 0.3s;
+}
+
+.navLink:hover {
+  background-color: #f0f0f0;
+}
+
+.show {
+  transform: scaleY(1);
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
   .menuIcon {
-    display: none;
-    cursor: pointer;
-    font-size: 1.5em;
-    transition: color 0.3s;
+    display: block;
   }
-  
-  .menuIcon:hover {
-    color: #555;
+
+  .navList {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    transform: scaleY(0);
+    transform-origin: top;
+    opacity: 0;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
   }
-  
+
+  .navList.show {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+
+  .navItem {
+    margin: 0;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  }
+
+  .navItem.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .navLink {
+    padding: 15px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: background-color 0.3s;
+  }
+
+  .navLink:hover {
+    background-color: #f0f0f0;
+  }
+
   .menuIcon.open {
-    color: #fff;
+    color: #333;
   }
-  
-  /* Responsividade */
-  @media (max-width: 768px) {
-    .menuIcon {
-      display: block;
-    }
-  
-    .navList {
-      display: flex;
-      flex-direction: column;
-      position: absolute;
-      top: 70px;
-      left: 0;
-      width: 100%;
-      background-color: #333;
-      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
-      transform: scaleY(0);
-      transform-origin: top;
-      opacity: 0;
-      transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-    }
-  
-    .navList.show {
-      transform: scaleY(1);
-      opacity: 1;
-    }
-  
-    .navItem {
-      margin: 0;
-      opacity: 0;
-      transform: translateY(-20px);
-      transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-    }
-  
-    .navItem.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  
-    .navLink {
-      padding: 15px;
-      width: 100%;
-      box-sizing: border-box;
-      transition: background-color 0.3s;
-    }
-  
-    .navLink:hover {
-      background-color: #444;
-    }
-  
-    .menuIcon.open {
-      color: #333;
-    }
-    
-    .navOpen {
-      position: relative;
-    }
-  }
+}

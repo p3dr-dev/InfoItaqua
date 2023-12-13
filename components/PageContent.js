@@ -1,11 +1,13 @@
 // components/PageContent.js
+import React from 'react';
 import styles from '../styles/PageContent.module.css';
 
-const PageContent = ({ title, children }) => (
-  <div className={styles.pageContent}>
-    <h1>{title}</h1>
-    <div>{children}</div>
-  </div>
-);
+const PageContent = () => {
+  return (
+    <div className={styles.content}>
+      {/* Conteúdo da página */}
+    </div>
+  );
+};
 
 export default PageContent;

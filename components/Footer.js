@@ -6,12 +6,10 @@ const Footer = () => {
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
-        <p>© 2023 InfoItaqua. Todos os direitos reservados.</p>
         <div className={styles.links}>
-          <a href="/politica-de-privacidade">Política de Privacidade</a>
-          <a href="/termos-de-servico">Termos de Serviço</a>
-          <a href="/contato">Contato</a>
+          {/* Adicione seus links aqui */}
         </div>
+        <p>© 2023 InfoItaqua. Todos os direitos reservados.</p>
       </div>
     </footer>
   );

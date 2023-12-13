@@ -36,18 +36,3 @@
     opacity: 1;
   }
 }
-
-@media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .links {
-    margin-top: 10px;
-  }
-
-  .links a {
-    margin: 5px;
-  }
-}

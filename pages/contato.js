@@ -1,14 +1,14 @@
 // pages/contato.js
+import React from 'react';
 import Layout from '../components/Layout';
 import PageContent from '../components/PageContent';
 
-const Contato = () => (
-  <Layout>
-    <PageContent title="Contato">
-      {/* Conteúdo específico da página de Contato
- aqui */}
-    </PageContent>
-  </Layout>
-);
+const Contato = () => {
+  return (
+    <Layout>
+      <PageContent />
+    </Layout>
+  );
+};
 
 export default Contato;
