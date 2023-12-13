@@ -1,26 +1,53 @@
 /* styles/Footer.module.css */
 .footer {
-    background-color: #333;
-    color: #fff;
-    padding: 20px 0;
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in-out forwards 0.5s;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.links a {
+  color: #fff;
+  margin: 0 10px;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.links a:hover {
+  color: #ddd;
+}
+
+/* Animação de Fade-In */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
     text-align: center;
   }
-  
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+
+  .links {
+    margin-top: 10px;
   }
-  
+
   .links a {
-    color: #fff;
-    margin: 0 10px;
-    text-decoration: none;
+    margin: 5px;
   }
-  
-  .links a:hover {
-    text-decoration: underline;
-  }
-  
+}

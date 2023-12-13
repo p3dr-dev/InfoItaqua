@@ -1,17 +1,32 @@
 /* styles/globals.css */
-body {
-    font-family: 'Arial', sans-serif;
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    background-color: #f7f7f7;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f8f8f8;
+    color: #333;
+    transition: background-color 0.3s;
+    overflow-x: hidden; /* Evita a barra de rolagem horizontal ao aplicar transições */
   }
   
   a {
     color: #3498db;
     text-decoration: none;
+    transition: color 0.3s;
   }
   
   a:hover {
-    text-decoration: underline;
+    color: #2980b9;
   }
   
+  /* Responsividade */
+  @media (max-width: 768px) {
+    body {
+      padding-top: 60px; /* Adicione espaço para o header fixo */
+    }
+  }

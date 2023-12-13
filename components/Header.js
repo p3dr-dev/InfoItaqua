@@ -1,15 +1,16 @@
 // components/Header.js
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { FaBars, FaHome, FaDesktop, FaFileAlt, FaTable, FaEnvelope } from 'react-icons/fa';
+import { FaBars } from 'react-icons/fa';
+import NavItem from './NavItem';
 import styles from '../styles/Header.module.css';
 
 const navItems = [
-  { href: '/', label: 'PÁGINA INICIAL', icon: <FaHome /> },
-  { href: '/informatica-basica', label: 'INFORMÁTICA BÁSICA', icon: <FaDesktop /> },
-  { href: '/editor-de-texto', label: 'EDITOR DE TEXTO', icon: <FaFileAlt /> },
-  { href: '/editor-de-planilha', label: 'EDITOR DE PLANILHA', icon: <FaTable /> },
-  { href: '/contato', label: 'CONTATO', icon: <FaEnvelope /> },
+  { href: '/', label: 'PÁGINA INICIAL' },
+  { href: '/informatica-basica', label: 'INFORMÁTICA BÁSICA' },
+  { href: '/editor-de-texto', label: 'EDITOR DE TEXTO' },
+  { href: '/editor-de-planilha', label: 'EDITOR DE PLANILHA' },
+  { href: '/contato', label: 'CONTATO' },
 ];
 
 const Header = () => {
@@ -37,19 +38,13 @@ const Header = () => {
     <header className={styles.header}>
       <div className={styles.overlay}>
         <h1 className={styles.title}>INFOITAQUA</h1>
-        <nav className={`${styles.nav} ${isMenuOpen ? styles.navOpen : ''}`}>
-          <div
-            className={styles.menuIcon}
-            onClick={toggleMenu}
-            role="button"
-            tabIndex={0}
-            aria-label={isMenuOpen ? 'Fechar Menu' : 'Abrir Menu'}
-          >
-            <FaBars />
-          </div>
-          <ul className={`${styles.navList} ${isMenuOpen ? styles.show : ''}`}>
+        <div className={`${styles.menuIcon} ${isMenuOpen ? styles.open : ''}`} onClick={toggleMenu}>
+          <FaBars />
+        </div>
+        <nav className={`${styles.nav} ${isMenuOpen ? styles.show : ''}`}>
+          <ul className={styles.navList}>
             {navItems.map((item, index) => (
-              <NavItem key={index} {...item} />
+              <NavItem key={index} href={item.href} label={item.label} onClick={() => setMenuOpen(false)} />
             ))}
           </ul>
         </nav>
@@ -57,13 +52,5 @@ const Header = () => {
     </header>
   );
 };
-
-const NavItem = ({ href, label, icon }) => (
-  <li className={`${styles.navItem} show`}>
-    <Link href={href} className={styles.navLink}>
-        {icon} {label}
-    </Link>
-  </li>
-);
 
 export default Header;
