@@ -1,6 +1,5 @@
 // components/Header.js
 import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
 import { FaBars } from 'react-icons/fa';
 import NavItem from './NavItem';
 import styles from '../styles/Header.module.css';

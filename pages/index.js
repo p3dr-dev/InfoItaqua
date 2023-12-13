@@ -3,12 +3,10 @@ import React from 'react';
 import Layout from '../components/Layout';
 import PageContent from '../components/PageContent';
 
-const Home = () => {
-  return (
-    <Layout>
-      <PageContent />
-    </Layout>
-  );
-};
+const Home = () => (
+  <Layout>
+    <PageContent />
+  </Layout>
+);
 
 export default Home;
