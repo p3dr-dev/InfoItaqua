@@ -5,7 +5,6 @@
   position: fixed;
   width: 100%;
   z-index: 1000;
-  overflow: hidden; /* Evita que o background azul ultrapasse os limites da tela */
 }
 
 .header.scrolled {
@@ -17,6 +16,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px;
+  margin: 0 auto; /* Centraliza o conteúdo na barra */
+  max-width: 1200px; /* Adiciona um máximo de largura */
 }
 
 .title {
@@ -63,13 +64,14 @@
   color: #fff;
   text-decoration: none;
   padding: 15px;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, color 0.3s; /* Adicionamos transição de cor */
   font-weight: bold;
   border-radius: 5px;
 }
 
 .navLink:hover {
   background-color: #2980b9;
+  color: #fff; /* Cor ao passar o mouse */
 }
 
 /* Removendo o texto dos links ao passar o mouse */
@@ -102,7 +104,7 @@
     flex-direction: column;
     position: absolute;
     top: 70px;
-    left: 0;
+    right: 0; /* Ajuste para o lado direito */
     width: 100%;
     background-color: #3498db;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
@@ -133,12 +135,12 @@
     padding: 15px;
     width: 100%;
     box-sizing: border-box;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, color 0.3s; /* Adicionamos transição de cor */
   }
 
   .navLink:hover {
     background-color: #2980b9;
-    border-radius: 5px;
+    color: #fff; /* Cor ao passar o mouse */
   }
 
   .menuIcon.open {
